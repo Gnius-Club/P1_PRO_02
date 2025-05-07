@@ -32,7 +32,7 @@
             font-weight: bold;
         }
          ul, ol {
-            margin-top: 0;
+            margin-top: 5px; /* Added some margin */
             margin-bottom: 10px;
             padding-left: 20px;
         }
@@ -44,19 +44,25 @@
             font-style: italic;
             color: #555;
         }
+         /* Ensure list styling within Action column is consistent */
+         .content td ul, .content td ol {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+         .content td li {
+            margin-bottom: 3px; /* Slightly tighter list spacing */
+        }
     </style>
     <script>
         function toggleContent(id) {
             const content = document.getElementById(id);
             if (content) {
-                // Toggle display
                 content.style.display = content.style.display === "none" ? "block" : "none";
             }
         }
 
         // Initialize content hidden state on load
         window.onload = () => {
-             // Ensure all content starts hidden
             const contents = document.querySelectorAll('.content');
             contents.forEach(content => {
                 content.style.display = 'none';
@@ -76,7 +82,7 @@
              <div class="banner" onclick="toggleContent('activity_0_content')">
                 📝 Resumen de Sesión
             </div>
-            <div id="activity_0_content" class="content"> <!-- Start hidden -->
+            <div id="activity_0_content" class="content">
                 <table>
                     <tr>
                         <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
@@ -140,12 +146,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 1: (2 min) Revisar Sesión 1</strong>
+                            <strong>Paso 1: Revisar Sesión 1</strong>
                             <ul>
-                                <li>Proyectar <strong>Diapositiva 1</strong> (Título: Sesión 2: ¡La Magia del Clic! Contenido: Imagen dinámica de una mano haciendo clic en un personaje de Scratch Jr.)</li>
+                                <li>Proyectar <strong>Diapositiva 1</strong>. <em>Título:</em> Sesión 2: ¡La Magia del Clic!</li>
                                 <li>Dar la bienvenida.</li>
-                                <li>Proyectar <strong>Diapositiva 2</strong> (Título: ¿Qué Logramos la Sesión Pasada? Contenido: Miniaturas o recordatorio visual de personajes/fondos creados en S1).</li>
-                                <li>Preguntar brevemente qué hicieron en la sesión anterior (crear personajes y fondos).</li>
+                                <li>Proyectar <strong>Diapositiva 2</strong>. <em>Título:</em> ¿Qué Logramos la Sesión Pasada?</li>
+                                <li>Preguntar brevemente qué hicieron en la sesión anterior.</li>
                             </ul>
                         </td>
                         <td>
@@ -156,11 +162,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 2: (2 min) Plan de Hoy</strong>
+                            <strong>Paso 2: Plan de Hoy</strong>
                             <ul>
-                                <li>Proyectar <strong>Diapositiva 3</strong> (Título: ¡Hoy: La Magia del Clic! Contenido: Diagrama simple: Clic Héroe -> Flecha -> Escena Mejor (imagen feliz). Clic Villano -> Flecha -> Escena Peor (imagen triste/problema)).</li>
-                                <li>Explicar el objetivo de hoy: hacer que los personajes reaccionen al clic y cambien de escena.</li>
-                                <li>Mostrar las nuevas tarjetas en el Kanban: "Programar Clic Héroe", "Programar Clic Villano".</li>
+                                <li>Proyectar <strong>Diapositiva 3</strong>. <em>Título:</em> ¡Hoy: La Magia del Clic!</li>
+                                <li>Explicar el objetivo de hoy.</li>
+                                <li>Mostrar las nuevas tarjetas en el Kanban.</li>
                             </ul>
                         </td>
                         <td>
@@ -175,10 +181,10 @@
                     </tr>
                      <tr>
                         <td>
-                            <strong>Paso 3: (1 min) Revisar Roles</strong>
+                            <strong>Paso 3: Revisar Roles</strong>
                             <ul>
-                               <li>Recordar brevemente los roles (Diseñador/a, Constructor/a, Probador/a).</li>
-                               <li>Ofrecer la oportunidad de rotar roles si los equipos lo desean.</li>
+                               <li>Recordar brevemente los roles.</li>
+                               <li>Ofrecer la oportunidad de rotar roles.</li>
                                <li>Confirmar los roles para la sesión de hoy.</li>
                             </ul>
                         </td>
@@ -207,20 +213,20 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 1: (10 min) Programar Clic Héroe</strong>
+                            <strong>Paso 1: Programar Clic Héroe</strong>
                             <ul>
-                                <li>Proyectar <strong>Diapositiva 4</strong> (Título: Bloques Mágicos: ¡Clic y Viaje! Contenido: Imágenes claras de los bloques "Al Tocar Personaje" (bloque amarillo con dedo) y "Ir a Escena" (bloque rojo con flecha y número de escena)).</li>
+                                <li>Proyectar <strong>Diapositiva 4</strong>. <em>Título:</em> Bloques Mágicos: ¡Clic y Viaje!</li>
                                 <li>Guiar al "Constructor/a":
                                     <ul>
-                                        <li>Abrir el proyecto guardado de la sesión pasada.</li>
+                                        <li>Abrir el proyecto guardado.</li>
                                         <li>Seleccionar el Héroe en la Escena Inicial.</li>
-                                        <li>Encontrar y añadir el bloque amarillo "Al Tocar Personaje".</li>
-                                        <li>Encontrar y añadir el bloque rojo "Ir a Escena".</li>
-                                        <li>Seleccionar el número correcto de la Escena Mejor en el bloque rojo.</li>
+                                        <li>Añadir bloque "Al Tocar Personaje".</li>
+                                        <li>Añadir bloque "Ir a Escena".</li>
+                                        <li>Seleccionar el número correcto de la Escena Mejor.</li>
                                     </ul>
                                 </li>
-                                <li>Mover la tarjeta "Programar Clic Héroe" a "Haciendo" en el Kanban.</li>
-                                <li>Circular y dar soporte técnico individualizado.</li>
+                                <li>Mover la tarjeta "Programar Clic Héroe" a "Haciendo".</li>
+                                <li>Circular y dar soporte técnico.</li>
                             </ul>
                         </td>
                         <td>
@@ -239,9 +245,9 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 2: (10 min) Programar Clic Villano/Problema</strong>
+                            <strong>Paso 2: Programar Clic Villano/Problema</strong>
                             <ul>
-                               <li>Instruir al "Constructor/a" para repetir el proceso, pero esta vez con el personaje del Villano/Problema:
+                               <li>Instruir al "Constructor/a" para repetir el proceso con el Villano/Problema:
                                     <ul>
                                         <li>Seleccionar el Villano/Problema en la Escena Inicial.</li>
                                         <li>Añadir bloque "Al Tocar Personaje".</li>
@@ -249,7 +255,7 @@
                                         <li>Seleccionar el número correcto de la Escena Peor.</li>
                                     </ul>
                                 </li>
-                                <li>Mover la tarjeta "Programar Clic Villano" a "Haciendo" en el Kanban.</li>
+                                <li>Mover la tarjeta "Programar Clic Villano" a "Haciendo".</li>
                                 <li>Continuar circulando y apoyando.</li>
                             </ul>
                         </td>
@@ -269,24 +275,24 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 3: (10 min) ¡A Probar la Magia!</strong>
+                            <strong>Paso 3: ¡A Probar la Magia!</strong>
                             <ul>
-                                <li>Proyectar <strong>Diapositiva 5</strong> (Título: ¡A Probar la Magia del Clic! Contenido: Icono grande de Play (triángulo verde), mano haciendo clic en personajes).</li>
-                                <li>Indicar que es el momento del "Probador/a de Aventura".</li>
+                                <li>Proyectar <strong>Diapositiva 5</strong>. <em>Título:</em> ¡A Probar la Magia del Clic!</li>
+                                <li>Indicar que es el momento del "Probador/a".</li>
                                 <li>Instrucciones para el Probador/a:
                                     <ul>
-                                        <li>Poner el proyecto en modo presentación (pantalla completa).</li>
-                                        <li>Tocar al Héroe. ¿Va a la Escena Mejor?</li>
-                                        <li>Volver a la Escena Inicial (reiniciar).</li>
-                                        <li>Tocar al Villano/Problema. ¿Va a la Escena Peor?</li>
+                                        <li>Poner en modo presentación.</li>
+                                        <li>Tocar al Héroe. ¿Va a Escena Mejor?</li>
+                                        <li>Reiniciar.</li>
+                                        <li>Tocar al Villano/Problema. ¿Va a Escena Peor?</li>
                                         <li>Probar varias veces.</li>
                                         <li>Informar al Constructor/a si algo no funciona.</li>
                                     </ul>
                                 </li>
-                                <li>Rol del Diseñador/a: Verificar que las escenas a las que se llega (Mejor y Peor) sean las correctas visualmente según el plan.</li>
-                                <li>Constructor/a: Escuchar al Probador/a y hacer correcciones si es necesario (ej. número de escena incorrecto en el bloque).</li>
-                                <li>Mover las tarjetas del Kanban a "Listo para Probar" y luego a "¡Listo!" cuando funcione correctamente.</li>
-                                <li>Animar la comunicación y colaboración dentro del equipo.</li>
+                                <li>Rol del Diseñador/a: Verificar escenas destino.</li>
+                                <li>Constructor/a: Escuchar y corregir.</li>
+                                <li>Mover las tarjetas del Kanban a "Listo para Probar" y luego a "¡Listo!".</li>
+                                <li>Animar la colaboración.</li>
                             </ul>
                         </td>
                         <td>
@@ -324,11 +330,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 1: (3 min) Demostración Rápida y Celebración</strong>
+                            <strong>Paso 1: Demostración Rápida y Celebración</strong>
                             <ul>
-                               <li>Proyectar <strong>Diapositiva 6</strong> (Título: ¡Nuestra Aventura Interactiva! Contenido: Animación simple o GIF de personajes reaccionando a clics, confeti o estrellas).</li>
-                               <li>Pedir a 1-2 equipos voluntarios que muestren rápidamente en la pantalla principal cómo funciona su clic (Héroe -> Mejor, Villano -> Peor).</li>
-                               <li>Felicitar a todos los equipos por lograr la interacción.</li>
+                               <li>Proyectar <strong>Diapositiva 6</strong>. <em>Título:</em> ¡Nuestra Aventura Interactiva!</li>
+                               <li>Pedir a 1-2 equipos voluntarios que muestren rápidamente cómo funciona su clic.</li>
+                               <li>Felicitar a todos los equipos.</li>
                                <li>Asegurarse de que las tarjetas de programación estén en "¡Listo!" en el Kanban.</li>
                             </ul>
                         </td>
@@ -346,10 +352,10 @@
                     </tr>
                     <tr>
                         <td>
-                            <strong>Paso 2: (2 min) Guardar y Próximos Pasos</strong>
+                            <strong>Paso 2: Guardar y Próximos Pasos</strong>
                             <ul>
                                 <li>Recordar guardar el proyecto OTRA VEZ.</li>
-                                <li>Anticipar brevemente la Sesión 3 (probar y corregir errores).</li>
+                                <li>Anticipar brevemente la Sesión 3.</li>
                                 <li>Despedida.</li>
                             </ul>
                         </td>
